@@ -105,6 +105,9 @@ public class FolderChangedTrigger<Job> extends Trigger {
             File filesArr[] = new File(path).listFiles(new RFMFilter());
             boolean modified = false;
 
+            if (filesArr == null) {
+                return modified;
+            }
             for (File file : filesArr)
             {
                 String filePath = file.getPath();
